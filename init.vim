@@ -42,9 +42,33 @@ Plug 'feline-nvim/feline.nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" main one
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+" 9000+ Snippets
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+
+" lua & third party sources -- See https://github.com/ms-jpq/coq.thirdparty
+" Need to **configure separately**
+
+Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+" - shell repl
+" - nvim lua api
+" - scientific calculator
+" - comment banner
+" - etc
+Plug 'windwp/nvim-autopairs'
+
 call plug#end()
 
 colorscheme nord
 
 " Emmet
 let g:user_emmet_leader_key=','
+
+" Autopairs
+lua << EOF
+require("nvim-autopairs").setup {}
+EOF
+
+" NerdTree
+map <silent> <C-n> :NERDTreeFocus<CR>
