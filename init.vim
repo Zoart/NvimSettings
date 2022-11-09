@@ -10,7 +10,7 @@ set tabstop=2
 set softtabstop=2
 
 set expandtab
-set shiftwidth=2
+set shiftwidth=8
 set autoindent
 
 set number
@@ -29,6 +29,9 @@ set spell
 set noswapfile
 set backupdir=~/.cache.vim
 
+set termguicolors
+set t_Co=256
+let python_highlight_all=1
 
 call plug#begin()
 
@@ -69,6 +72,7 @@ let g:user_emmet_leader_key=','
 lua << EOF
 require("nvim-autopairs").setup {}
 EOF
+
 
 " NerdTree
 map <silent> <C-n> :NERDTreeFocus<CR>
