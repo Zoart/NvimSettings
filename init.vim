@@ -38,6 +38,11 @@ set termguicolors
 set t_Co=256
 let python_highlight_all=1
 
+" Enable wordcount
+let g:airline#extensions#wordcount#enabled = 1
+" Add notes to filetypes
+let g:airline#extensions#wordcount#filetypes = '\vnotes|help|markdown|rst|org|text|asciidoc|tex|mail'
+
 :autocmd InsertLeave * silent! update
 
 call plug#begin()
