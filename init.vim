@@ -1,3 +1,4 @@
+"~/.config/nvim/init
 "https://github.com/junegunn/vim-plug
 
 set nocompatible
