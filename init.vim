@@ -20,6 +20,9 @@ set number
 set relativenumber
 
 set wildmode=longest, list
+
+" file autocompletion
+set wildmenu
 set cc=80
 
 inoremap ii <esc>
@@ -57,8 +60,6 @@ Plug 'feline-nvim/feline.nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-
-
 Plug 'windwp/nvim-autopairs'
 
 " JS/JSX/TS
@@ -66,6 +67,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'maxmellon/vim-jsx-pretty'
+
+" Autopair
+Plug 'windwp/nvim-autopairs'
 
 
 call plug#end()
@@ -85,3 +89,8 @@ nnoremap ,<space> :nohlsearch<CR>
 " Autocomplit
 
 set completeopt=menu,menuone,noselect
+
+" Autopairs
+lua << EOF
+require("nvim-autopairs").setup {}
+EOF
