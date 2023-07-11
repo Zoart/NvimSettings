@@ -17,7 +17,7 @@ set shiftwidth=2
 set autoindent
 
 set number
-set relativenumber
+" set relativenumber
 
 set wildmode=longest, list
 
@@ -40,6 +40,20 @@ set backupdir=~/.cache.vim
 set termguicolors
 set t_Co=256
 let python_highlight_all=1
+
+" Resize text
+" Decrease font size
+nnoremap <C--> :set guifont-=1<CR>
+
+" Increase font size
+nnoremap <C-=> :set guifont+=1<CR>
+
+
+" Delete all lines
+nnoremap da :%d<CR>
+
+" Copy all lines
+nnoremap ca :%y+<CR>
 
 " Enable wordcount
 let g:airline#extensions#wordcount#enabled = 1
@@ -94,3 +108,4 @@ set completeopt=menu,menuone,noselect
 lua << EOF
 require("nvim-autopairs").setup {}
 EOF
+
